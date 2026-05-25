@@ -6,6 +6,99 @@ Vietnamese name: **Điểm B phát triển**
 
 ---
 
+## Repository Map
+
+This repo is organized as a small public method kit.
+
+If you are new, start with the quick-start guide, then use the templates and prompts when you run your own loop.
+
+### Main files
+
+| Path | Role |
+|---|---|
+| `README.md` | Main concept and overview |
+| `docs/quick-start.md` | First loop guide for new users |
+| `examples/simple-tool-example.md` | A simple example showing one Progressive B Discovery loop |
+| `prompts/progressive-b-discovery-prompt.md` | Prompt pack for running the method with AI |
+| `templates/checkpoint-template.md` | Template for preserving the current understanding |
+| `templates/construction-trail-template.md` | Template for preserving lineage and build history |
+| `templates/agent-box-template.md` | Template for giving an AI agent a bounded working scope |
+| `templates/human-feedback-template.md` | Template for capturing real human feedback |
+
+### Recommended reading path
+
+For a first-time reader:
+
+1. Read `README.md` for the core idea.
+2. Open `docs/quick-start.md` to run the first loop.
+3. Use `templates/human-feedback-template.md` after reviewing a rough version.
+4. Use `templates/checkpoint-template.md` to preserve what is now understood.
+5. Use `prompts/progressive-b-discovery-prompt.md` when asking an AI agent to continue.
+6. Use `examples/simple-tool-example.md` to see the method in action.
+
+### Minimal use path
+
+If you only want to try the method once, use this path:
+
+1. Write your rough intent.
+2. Describe your current B.
+3. Ask AI to create or improve a rough version.
+4. Use the result in reality.
+5. Capture human feedback.
+6. Create a checkpoint.
+7. Decide patch or rebuild.
+
+Use these files:
+
+- `docs/quick-start.md`
+- `templates/human-feedback-template.md`
+- `templates/checkpoint-template.md`
+- `prompts/progressive-b-discovery-prompt.md`
+
+### For AI agents
+
+When using this repo as context for an AI agent, provide:
+
+- the current B;
+- the current version;
+- human feedback;
+- source state;
+- trust state;
+- known debt;
+- the desired next move.
+
+Recommended agent instruction:
+
+    Use Progressive B Discovery.
+    Preserve lineage.
+    Create a checkpoint.
+    Identify known debt.
+    Recommend patch or rebuild.
+    Keep the next step practical.
+
+### Current repo state
+
+Version: v0.1.1
+
+State: early public method seed
+
+Current structure:
+
+- overview;
+- quick start;
+- templates;
+- prompt pack;
+- simple example.
+
+Next development direction:
+
+- add more examples;
+- shorten README later if needed;
+- improve public wording through real use;
+- collect feedback from actual users.
+
+---
+
 ## 1. What is Progressive B Discovery?
 
 Progressive B Discovery is a method for building tools, workflows, or products when the final target is not fully clear at the beginning.
