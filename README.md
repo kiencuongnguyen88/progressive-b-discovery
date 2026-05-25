@@ -99,11 +99,9 @@ Current structure:
 
 Next development direction:
 
-- add more examples after real use;
-- shorten README later if needed;
-- improve public wording through reader feedback;
 - collect feedback from real readers and users;
-- improve examples after real use;
+- improve public wording through reader feedback;
+- add or improve examples after real use;
 - keep the repo small and practical.
 
 ---
