@@ -26,6 +26,7 @@ If you are new, start with the quick-start guide, then use the templates and pro
 | [`README.md`](README.md) | Main concept and overview |
 | [`docs/quick-start.md`](docs/quick-start.md) | First loop guide for new users |
 | [`examples/simple-tool-example.md`](examples/simple-tool-example.md) | A simple example showing one Progressive B Discovery loop |
+| [`examples/first-loop-readback-example.md`](examples/first-loop-readback-example.md) | A completed readback example showing what one loop can leave behind |
 | [`prompts/progressive-b-discovery-prompt.md`](prompts/progressive-b-discovery-prompt.md) | Prompt pack for running the method with AI |
 | [`templates/checkpoint-template.md`](templates/checkpoint-template.md) | Template for preserving the current understanding |
 | [`templates/construction-trail-template.md`](templates/construction-trail-template.md) | Template for preserving lineage and build history |
@@ -42,6 +43,7 @@ For a first-time reader:
 4. Use [`templates/checkpoint-template.md`](templates/checkpoint-template.md) to preserve what is now understood.
 5. Use [`prompts/progressive-b-discovery-prompt.md`](prompts/progressive-b-discovery-prompt.md) when asking an AI agent to continue.
 6. Use [`examples/simple-tool-example.md`](examples/simple-tool-example.md) to see the method in action.
+7. Use [`examples/first-loop-readback-example.md`](examples/first-loop-readback-example.md) to see what one completed loop leaves behind.
 
 ### Minimal use path
 
@@ -61,6 +63,7 @@ Use these files:
 - [`templates/human-feedback-template.md`](templates/human-feedback-template.md)
 - [`templates/checkpoint-template.md`](templates/checkpoint-template.md)
 - [`prompts/progressive-b-discovery-prompt.md`](prompts/progressive-b-discovery-prompt.md)
+- [`examples/first-loop-readback-example.md`](examples/first-loop-readback-example.md)
 
 ### For AI agents
 
@@ -95,7 +98,8 @@ Current structure:
 - quick start;
 - templates;
 - prompt pack;
-- simple example.
+- simple example;
+- first-loop readback example.
 
 Next development direction:
 
@@ -663,9 +667,9 @@ The way we write shapes the way the agent runs.
 
 ## 15. Current Status
 
-Version: v0.1
+Version: v0.1.2
 
-State: early public method draft
+State: early public method seed
 
 Origin: extracted from DIAMOND OS runtime practice
 
