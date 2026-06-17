@@ -378,6 +378,8 @@ Create a quick-start guide for first-time readers.
 Preserve enough lineage for the next loop.
 ```
 
+For a completed readback shape, see `examples/first-loop-readback-example.md`.
+
 ---
 
 ## 5. What files to use in this repo
@@ -391,6 +393,7 @@ Recommended order:
 5. Use `templates/construction-trail-template.md` when the project has multiple loops.
 6. Use `templates/agent-box-template.md` when asking AI to work inside a bounded scope.
 7. Use `prompts/progressive-b-discovery-prompt.md` when you want a complete prompt pack.
+8. Use `examples/first-loop-readback-example.md` to see what one completed loop can leave behind.
 
 ---
 
@@ -503,3 +506,5 @@ Run one small loop.
 Do not start with a large system.
 
 Start with one unclear target, one rough version, one real feedback cycle, and one checkpoint.
+
+Then compare your output with `examples/first-loop-readback-example.md` to check whether the loop left enough feedback, debt, decision, and next-move context behind.
