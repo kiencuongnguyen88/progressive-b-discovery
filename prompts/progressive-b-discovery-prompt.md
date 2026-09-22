@@ -14,12 +14,16 @@ This prompt asks the AI agent to help you:
 
 * clarify the current B;
 * identify what is already known;
-* build or improve a rough version;
-* capture human feedback;
+* use observed evidence from real use, tests, readback, runtime results, or workflow friction;
+* build or improve a rough version inside explicit boundaries;
+* capture human feedback, including workflow or manual effort;
+* return bounded-work evidence to the larger Current B;
 * preserve lineage;
-* create a checkpoint;
+* create a checkpoint that separates work completion from B acceptance;
 * detect known debt;
-* suggest patch or rebuild;
+* keep Proposed Next B separate until it is adopted;
+* preserve a working checkpoint while exploring a newer candidate;
+* suggest patch, rebuild, retest, gather feedback, or accept the current scope;
 * prepare the next loop.
 
 Short principle:
@@ -90,6 +94,32 @@ This may be incomplete or unclear.
 
 Help me make it clearer through runtime, not through over-planning.
 
+## Current B Status
+
+Acceptance scope:
+
+```
+...
+```
+
+Current B state:
+
+```
+still developing / accepted for this scope / blocked by missing evidence / needs another real-use test
+```
+
+Proposed Next B, if any:
+
+```
+...
+```
+
+Proposal state:
+
+```
+proposal / adopted as Current B / rejected / parked
+```
+
 ---
 
 ## Current State
@@ -152,6 +182,24 @@ Specific context:
 
 ---
 
+## Observed Evidence So Far
+
+What has already happened in reality?
+
+Examples:
+
+* test or readback result;
+* runtime or usage result;
+* observed failure or repair;
+* workflow friction or repeated coordination;
+* proof that confirmed or contradicted an assumption.
+
+Observed evidence:
+
+* ...
+
+---
+
 ## Human Feedback So Far
 
 What feels useful:
@@ -179,6 +227,10 @@ What I do not trust yet:
 * ...
 
 What feels right and should continue:
+
+* ...
+
+Workflow / manual effort:
 
 * ...
 
@@ -219,6 +271,18 @@ Out of scope for now:
 ```
 ...
 ```
+
+## Fixed Boundaries
+
+What must remain fixed during this loop?
+
+* ...
+
+## Allowed Freedom
+
+What may the AI vary, compare, test, or improve inside those boundaries?
+
+* ...
 
 ---
 
@@ -312,58 +376,45 @@ Return the result in this structure:
 
 ### 1. Current B
 
-State the current best understanding of B in simple language.
+State the current best understanding of B.
 
-### 2. What is known
+### 2. B status and evidence
 
-List what is already clear.
+Include acceptance scope, current B state, observed evidence received, and what remains unresolved.
 
-### 3. What is still unclear
+A completed bounded task does not automatically accept the larger Current B.
 
-List what needs runtime, feedback, or readback.
+### 3. What is known
 
-### 4. Recommended next build
+### 4. What is still unclear
 
-Describe the rough next version or next improvement.
+### 5. Recommended bounded work
 
-### 5. Human feedback needed
+Describe the next build, test, comparison, or probe inside the declared boundaries.
 
-Tell me what I should test or judge in real use.
+### 6. Human feedback needed
 
-### 6. Known debt
+State what the human should judge or interpret next. Include workflow or manual effort where relevant.
 
-Classify visible debt:
+### 7. Known debt
 
-* code debt;
-* context debt;
-* source debt;
-* decision debt;
-* verification debt;
-* design debt;
-* language debt;
-* process debt.
+Classify visible debt where relevant: code, context, source, decision, verification, design, language, or process.
 
-### 7. Checkpoint draft
+### 8. Evidence returned to Current B
 
-Create a compact checkpoint for this loop.
+Separate observed evidence from interpretation. State what the bounded work established, what it did not establish, its effect on Current B, and what remains unresolved outside the box.
 
-### 8. Patch or rebuild recommendation
+### 9. Checkpoint draft
 
-Choose one:
+Include Current B, acceptance scope/state, evidence, known debt, any Proposed Next B and proposal state, plus the preserved working checkpoint while a newer candidate is explored.
 
-* patch;
-* checkpoint only;
-* rebuild;
-* gather more feedback;
-* create agent box;
-* create readback;
-* pause.
+### 10. Next-move recommendation
 
-Explain the reason.
+Choose the best fit: patch, checkpoint only, rebuild, retest, gather more feedback, accept this scope, create agent box, create readback, or pause.
 
-### 9. Next agent instruction
+### 11. Next agent instruction
 
-Write a short instruction for the next AI or agent to continue from this point.
+Write a short instruction that continues from the checkpoint.
 
 ---
 
@@ -429,23 +480,40 @@ What is not trusted yet:
 
 * ...
 
+Observed evidence so far:
+
+* ...
+
 Scope:
 
 ```
 ...
 ```
 
+Fixed boundaries:
+
+* ...
+
+Allowed freedom:
+
+* ...
+
+Workflow / manual effort:
+
+* ...
+
 Please return:
 
 1. current B;
-2. what is known;
-3. what is unclear;
-4. recommended next build;
-5. human feedback needed;
+2. B status for the scope being decided;
+3. recommended bounded work;
+4. evidence returned to Current B;
+5. human feedback needed to interpret or test that evidence;
 6. known debt;
 7. checkpoint draft;
-8. patch or rebuild recommendation;
-9. next agent instruction.
+8. Proposed Next B, if evidence suggests a target change — keep it separate from Current B until adopted;
+9. next-move recommendation;
+10. next agent instruction.
 
 Use practical language and preserve enough lineage for the next loop.
 
@@ -496,10 +564,11 @@ Please create:
 1. a clearer Current B;
 2. a minimal first version plan;
 3. a simple structure;
-4. what to test in real use;
-5. what feedback I should capture;
-6. a checkpoint template for after the first test;
-7. signs that tell us whether to patch or rebuild.
+4. what to test or read back in real use;
+5. what evidence should be recorded;
+6. what feedback I should capture;
+7. a checkpoint template for after the first test;
+8. signs that tell us whether to patch or rebuild.
 
 Keep the first version small enough to use.
 
@@ -526,6 +595,10 @@ Current version:
 ```
 ...
 ```
+
+Observed evidence from use, testing, readback, or runtime:
+
+* ...
 
 What worked:
 
@@ -555,17 +628,22 @@ What felt right:
 
 * ...
 
+Workflow / manual effort:
+
+* ...
+
 Please return:
 
-1. updated Current B;
-2. what changed after runtime;
-3. what should be kept;
-4. what should be removed;
-5. known debt;
-6. patch candidates;
-7. rebuild signals;
-8. checkpoint draft;
-9. next move recommendation.
+1. Current B;
+2. B status for the scope being decided;
+3. what changed after runtime;
+4. what should be kept;
+5. what should be removed;
+6. known debt;
+7. evidence returned to Current B, with observed evidence separated from interpretation;
+8. Proposed Next B, if the evidence suggests a target change — keep it separate until adopted;
+9. checkpoint draft;
+10. next move recommendation.
 
 ---
 
@@ -650,6 +728,25 @@ Current B:
 ...
 ```
 
+Acceptance scope:
+
+```
+...
+```
+
+Current B state:
+
+* still developing;
+* accepted for this scope;
+* blocked by missing evidence;
+* needs another real-use test.
+
+Selected state:
+
+```
+...
+```
+
 Current version:
 
 ```
@@ -661,6 +758,10 @@ Real use context:
 ```
 ...
 ```
+
+Observed evidence:
+
+* ...
 
 What works:
 
@@ -686,6 +787,25 @@ Trust state:
 
 * ...
 
+Proposed Next B, if any:
+
+```
+...
+```
+
+Proposal state:
+
+* proposal;
+* adopted as Current B;
+* rejected;
+* parked.
+
+Preserved working checkpoint:
+
+```
+...
+```
+
 Next likely move:
 
 * patch;
@@ -701,14 +821,18 @@ Please create:
 1. checkpoint ID suggestion;
 2. compact summary;
 3. Current B;
-4. What works;
-5. What does not fit;
-6. Human feedback;
-7. Known debt;
-8. Keep if rebuild;
-9. Remove if rebuild;
-10. Next move;
-11. Next agent instruction.
+4. acceptance scope and Current B state;
+5. observed evidence received, its interpretation, and what remains unresolved;
+6. What works;
+7. What does not fit;
+8. Human feedback, including workflow or manual effort;
+9. Known debt;
+10. Proposed Next B and proposal state, if any;
+11. preserved working checkpoint;
+12. Keep if rebuild;
+13. Remove if rebuild;
+14. Next move;
+15. Next agent instruction.
 
 ---
 
@@ -744,6 +868,14 @@ Scope:
 ...
 ```
 
+Fixed boundaries:
+
+* ...
+
+Allowed freedom:
+
+* ...
+
 Inputs:
 
 * ...
@@ -760,23 +892,30 @@ Required output:
 
 * ...
 
+Evidence the box should return to Current B:
+
+* ...
+
 Please create:
 
 1. Box ID suggestion;
 2. Goal;
 3. Current B;
 4. Scope;
-5. Out of scope;
-6. Inputs;
-7. Source state;
-8. Trust state;
-9. Allowed actions;
-10. Human Gate;
-11. Required output;
-12. Readback checklist;
-13. Exit condition;
-14. Next move options;
-15. Exact agent instruction.
+5. Fixed Boundaries;
+6. Allowed Freedom;
+7. Out of scope;
+8. Inputs;
+9. Source state;
+10. Trust state;
+11. Allowed actions;
+12. Human Gate;
+13. Required output;
+14. Evidence Returned to Current B;
+15. Readback checklist;
+16. Exit condition;
+17. Next move options;
+18. Exact agent instruction.
 
 ---
 
@@ -852,7 +991,11 @@ After the AI returns output, check:
 * Is the patch or rebuild recommendation clear?
 * Is the output usable without hidden context?
 * Is source state clear?
+* Is the evidence basis visible and separated from interpretation?
 * Are Human Gates respected?
+* Is bounded-work completion kept separate from Current B acceptance?
+* Is any Proposed Next B still a proposal unless it was explicitly adopted?
+* Is the working checkpoint preserved while a newer candidate is explored?
 * Can another AI continue from the result?
 
 Short readback:
@@ -861,8 +1004,11 @@ Short readback:
 clearer B: yes / partial / no
 usable next step: yes / partial / no
 lineage preserved: yes / partial / no
+evidence basis visible: yes / partial / no
 checkpoint ready: yes / partial / no
-patch/rebuild decision clear: yes / partial / no
+bounded work vs B acceptance separated: yes / partial / no
+Proposed Next B admission clear: yes / partial / no
+patch/rebuild/accept decision clear: yes / partial / no
 ```
 
 ---
@@ -874,6 +1020,6 @@ Progressive B Discovery prompt in one paragraph:
 ```
 Help me move toward a clearer B.
 The final target is not fully clear yet.
-Use the current intent, current state, and human feedback to clarify B, preserve lineage, create a checkpoint, detect known debt, and recommend whether the next move should be patch, rebuild, readback, or more feedback.
+Use the current intent, Current B, current state, observed evidence, fixed boundaries, allowed freedom, and human feedback to run one bounded loop. Return evidence to Current B, keep bounded-work completion separate from B acceptance, keep any Proposed Next B separate until adopted, preserve a working checkpoint, detect known debt, and recommend whether the next move should be patch, rebuild, retest, readback, more feedback, or acceptance for the declared scope.
 Keep the output practical and easy to continue.
 ```

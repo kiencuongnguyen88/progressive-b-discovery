@@ -28,13 +28,21 @@ Basic loop:
 
 ```
 rough intent
-→ rough version
-→ real use
+→ Current B
+→ bounded work / rough version
+→ evidence from use, testing, or readback
 → human feedback
 → checkpoint
-→ patch or rebuild
+→ decide what the evidence changes
+→ patch, rebuild, retest, or accept this scope
 → clearer B
 ```
+
+Evidence can come from real use, tests, readback, runtime results, and observed workflow friction.
+
+A completed task is evidence. It does not automatically mean the larger Current B is accepted.
+
+A newer proposal is also still a proposal until the decision or Human Gate for that target change is satisfied.
 
 The goal is not to get the first version perfect.
 
@@ -70,18 +78,19 @@ This can be:
 * an AI output;
 * a workflow you already use.
 
-### 3. Real feedback
+### 3. Reality evidence and feedback
 
-You need to say what happens when you use or review it.
+Capture what actually happened, then what the human thinks it means.
 
-Examples:
+Evidence can include:
 
-* This part works.
-* This part is confusing.
-* This part is missing.
-* This part is too much.
-* I do not trust this output yet.
-* This direction feels right.
+* a test or readback passed or failed;
+* runtime behavior matched or contradicted the expectation;
+* a repair changed the result;
+* repeated manual steps, transfers, handoffs, or waiting created friction;
+* the human found something useful, confusing, missing, excessive, or not trusted yet.
+
+Human feedback is important, but it is not the only reality signal.
 
 ### 4. A place to save the checkpoint
 
@@ -172,32 +181,42 @@ What is not trusted yet:
 Scope:
 ...
 
+Fixed boundaries:
+...
+
+Allowed freedom:
+...
+
 Please return:
 1. current B;
-2. what is known;
-3. what is unclear;
-4. recommended next build;
-5. human feedback needed;
+2. B status for the scope being decided;
+3. recommended bounded work;
+4. what evidence the work should return to Current B;
+5. human feedback needed, including workflow or manual effort;
 6. known debt;
 7. checkpoint draft;
-8. patch or rebuild recommendation;
-9. next agent instruction.
+8. Proposed Next B, if evidence suggests a target change — clearly marked as a proposal;
+9. next move: patch / rebuild / retest / gather feedback / accept this scope;
+10. next agent instruction.
 
-Use practical language and preserve enough lineage for the next loop.
+Use practical language. A completed bounded task does not automatically accept the larger Current B, and a Proposed Next B does not silently replace it.
 ```
 
 ---
 
-### Step 4 — Use or review the result
+### Step 4 — Use, test, or review the result
 
 Do not judge only by theory.
 
-Use the result in a real workflow.
+Use the result in a real workflow, test it, or read it back against the source and expected behavior.
+
+Record what happened before deciding what it means.
 
 Ask:
 
 * Does this help?
 * Where does it slow me down?
+* Where do repeated manual steps, transfers, handoffs, or waiting add friction?
 * What feels unclear?
 * What is missing?
 * What is too much?
@@ -206,13 +225,18 @@ Ask:
 
 ---
 
-### Step 5 — Capture human feedback
+### Step 5 — Capture evidence and human feedback
+
+Keep observed evidence separate from interpretation.
 
 Use short, direct feedback.
 
 Example:
 
 ```
+Observed evidence:
+The current flow completes, but the human has to copy the same context between steps.
+
 What works:
 The structure is easy to follow.
 
@@ -228,13 +252,16 @@ Too many internal terms.
 Not trusted yet:
 I am not sure outside readers will understand the method.
 
+Workflow / manual effort:
+I have to copy the same context between steps.
+
 Next:
 Split templates into separate files and add a quick-start guide.
 ```
 
 Human feedback does not need to sound technical.
 
-It needs to reflect reality.
+It should interpret the observed evidence without replacing it.
 
 ---
 
@@ -248,7 +275,16 @@ Use this compact checkpoint:
 Current B:
 ...
 
+Acceptance scope:
+...
+
+Current B state:
+still developing / accepted for this scope / blocked by missing evidence / needs another real-use test
+
 Current version:
+...
+
+Evidence received:
 ...
 
 What works:
@@ -257,7 +293,13 @@ What works:
 What does not fit:
 ...
 
+Observed evidence:
+...
+
 Human feedback:
+...
+
+Workflow / manual effort:
 ...
 
 Known debt:
@@ -269,11 +311,32 @@ Keep if rebuild:
 Remove if rebuild:
 ...
 
+Proposed Next B:
+none / ...
+
+Proposal state:
+proposal / adopted / rejected / parked
+
+Preserved working checkpoint while testing a newer proposal:
+...
+
 Next move:
-patch / rebuild / gather feedback / pause
+patch / rebuild / retest / gather feedback / accept this scope / pause
 ```
 
 A checkpoint makes the next loop easier.
+
+Keep two distinctions visible:
+
+```
+bounded work complete
+!=
+Current B accepted
+
+Proposed Next B
+!=
+Current B
+```
 
 ---
 
@@ -301,6 +364,8 @@ Short rule:
 Patch when the structure still fits.
 Rebuild when the target has outgrown the structure.
 ```
+
+If the Current B is accepted for the declared scope, stop inventing more work for that scope until new material evidence appears.
 
 ---
 
@@ -358,6 +423,15 @@ README is too large.
 Known debt:
 Structure debt. Templates should be separated.
 
+Acceptance scope:
+Public method repo structure for this loop.
+
+Current B state:
+Still developing.
+
+Proposed Next B:
+None yet.
+
 Keep if rebuild:
 Core loop, 3D print analogy, checkpoint idea.
 
@@ -394,6 +468,7 @@ Recommended order:
 6. Use `templates/agent-box-template.md` when asking AI to work inside a bounded scope.
 7. Use `prompts/progressive-b-discovery-prompt.md` when you want a complete prompt pack.
 8. Use `examples/first-loop-readback-example.md` to see what one completed loop can leave behind.
+9. Use `examples/bounded-work-current-b-example.md` to see why a successful bounded task does not automatically accept the larger Current B.
 
 ---
 
@@ -426,11 +501,20 @@ What is confusing:
 What is not trusted yet:
 ...
 
+Workflow / manual effort:
+...
+
+Fixed boundaries:
+...
+
+Allowed freedom:
+...
+
 Next move:
-patch / rebuild / gather feedback / pause
+patch / rebuild / retest / gather feedback / accept this scope / pause
 
 Ask AI:
-Please update the current B, identify known debt, create a compact checkpoint, and recommend the next move.
+Please preserve the Current B, return evidence from this bounded task, create a compact checkpoint, and keep any Proposed Next B separate until it is explicitly adopted.
 ```
 
 ---
@@ -488,10 +572,19 @@ Use the smallest structure that preserves the next loop.
 B is not fixed from day one.
 B develops through runtime.
 
-Human gives reality feedback.
-AI uses lineage and checkpoints to rebuild better.
+Real use, tests, and readback provide evidence.
+Human feedback says what fits, what fails, and what should change.
+AI uses evidence, lineage, and checkpoints to rebuild better.
 
 Technical debt is acceptable when recoverability remains.
+
+Bounded work complete
+does not automatically mean
+Current B accepted.
+
+Proposed Next B
+does not automatically become
+Current B.
 
 Patch when the structure still fits.
 Rebuild when the target has outgrown the structure.
