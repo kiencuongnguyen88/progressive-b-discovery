@@ -12,7 +12,9 @@ Vietnamese name: **Mẫu hộp chạy cho AI agent**
 
 AI agents can move fast.
 
-Fast movement is useful when the box is clear.
+Fast movement is useful when the boundaries are clear.
+
+A bounded box does not require every internal decision to be fixed in advance. The human can set what must remain stable while allowing the agent to compare, test, or improve the parts that are safe to vary.
 
 Without a clear box, the agent may guess the goal, touch the wrong source, change too much, or create output that is hard to verify.
 
@@ -20,9 +22,9 @@ An Agent Box gives the agent a safe and useful working space.
 
 Short principle:
 
-    Human locks the box.
-    AI runs inside the box.
-    Human decides at major gates.
+    Human sets the boundaries and major gates.
+    AI works with declared freedom inside those boundaries.
+    The box returns evidence to the Current B.
 
 ---
 
@@ -140,6 +142,59 @@ Scope:
 - ...
 - ...
 - ...
+
+---
+
+## Fixed Boundaries
+
+What must remain fixed while the agent works?
+
+Examples:
+
+- problem or target boundary;
+- source-of-truth boundary;
+- authority boundary;
+- privacy or safety boundary;
+- acceptance condition;
+- forbidden external actions;
+- time budget;
+- cost budget;
+- compute budget.
+
+Fixed boundaries for this box:
+
+- ...
+- ...
+- ...
+
+---
+
+## Allowed Freedom
+
+What may the agent vary, compare, test, or improve inside those boundaries?
+
+Examples:
+
+- implementation approach;
+- candidate solution;
+- prompt or strategy;
+- test sequence;
+- number of trials within the box limits;
+- presentation or structure.
+
+Allowed freedom for this box:
+
+- ...
+- ...
+- ...
+
+Short principle:
+
+```text
+Bounded does not mean small.
+Bounded does not mean every decision is fixed.
+Bounded means the working envelope is explicit.
+```
 
 ---
 
@@ -451,6 +506,34 @@ Selected lenses:
 
 ---
 
+## Evidence Returned to Current B
+
+What should this box return to the larger Progressive B loop?
+
+### What this box established
+
+- ...
+
+### What this box did not establish
+
+- ...
+
+### Evidence from real use or testing
+
+- ...
+
+### Effect on Current B
+
+- ...
+
+### What remains unresolved outside this box
+
+- ...
+
+A successful Agent Box does not automatically accept the larger Current B.
+
+---
+
 ## Box Exit Condition
 
 When should the agent stop?
@@ -531,6 +614,14 @@ Use this compact version for small tasks.
 
     ...
 
+### Fixed Boundaries
+
+    ...
+
+### Allowed Freedom
+
+    ...
+
 ### Inputs
 
 - ...
@@ -548,6 +639,16 @@ Use this compact version for small tasks.
 - ...
 
 ### Exit Condition
+
+    ...
+
+### Evidence Returned to Current B
+
+What this box established:
+
+    ...
+
+What remains unresolved outside this box:
 
     ...
 

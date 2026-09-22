@@ -27,6 +27,7 @@ If you are new, start with the quick-start guide, then use the templates and pro
 | [`docs/quick-start.md`](docs/quick-start.md) | First loop guide for new users |
 | [`examples/simple-tool-example.md`](examples/simple-tool-example.md) | A simple example showing one Progressive B Discovery loop |
 | [`examples/first-loop-readback-example.md`](examples/first-loop-readback-example.md) | A completed readback example showing what one loop can leave behind |
+| [`examples/bounded-work-current-b-example.md`](examples/bounded-work-current-b-example.md) | Shows how successful bounded work returns evidence to a larger Current B without automatically closing it |
 | [`prompts/progressive-b-discovery-prompt.md`](prompts/progressive-b-discovery-prompt.md) | Prompt pack for running the method with AI |
 | [`templates/checkpoint-template.md`](templates/checkpoint-template.md) | Template for preserving the current understanding |
 | [`templates/construction-trail-template.md`](templates/construction-trail-template.md) | Template for preserving lineage and build history |
@@ -44,6 +45,7 @@ For a first-time reader:
 5. Use [`prompts/progressive-b-discovery-prompt.md`](prompts/progressive-b-discovery-prompt.md) when asking an AI agent to continue.
 6. Use [`examples/simple-tool-example.md`](examples/simple-tool-example.md) to see the method in action.
 7. Use [`examples/first-loop-readback-example.md`](examples/first-loop-readback-example.md) to see what one completed loop leaves behind.
+8. Use [`examples/bounded-work-current-b-example.md`](examples/bounded-work-current-b-example.md) to see how bounded work can pass while the larger Current B is still developing.
 
 ### Minimal use path
 
@@ -88,7 +90,7 @@ Recommended agent instruction:
 
 ### Current repo state
 
-Version: v0.1.2
+Version: v0.2
 
 State: early public method seed
 
@@ -99,7 +101,8 @@ Current structure:
 - templates;
 - prompt pack;
 - simple example;
-- first-loop readback example.
+- first-loop readback example;
+- bounded-work / Current-B example.
 
 Next development direction:
 
@@ -262,6 +265,48 @@ That is acceptable.
 The first version is not the final product.
 It is a probe.
 
+### Bounded work inside a Progressive B loop
+
+A Progressive B loop may contain one or more bounded pieces of work.
+
+An Agent Box is one way to define a bounded piece of work. It has its own goal and exit condition, but it is not the larger Current B.
+
+A successful box returns evidence to the larger loop:
+
+```text
+Current B
+→ bounded work / Agent Box
+→ build, test, compare, or probe
+→ evidence from real use
+→ update Current B
+```
+
+This distinction matters:
+
+```text
+bounded work complete
+does not automatically mean
+Current B accepted
+```
+
+The larger B may still have unresolved parts outside the box that just finished.
+
+### A proposed next B is still a proposal
+
+Evidence can make a different target look better.
+
+AI may propose a next B, but a newer proposal does not silently replace the Current B.
+
+Keep the Current B until the decision or Human Gate set for that target change is satisfied.
+
+Short principle:
+
+```text
+Proposed Next B
+!=
+Current B
+```
+
 ### Step 3 — Use it in reality
 
 Do not judge only by theory.
@@ -321,6 +366,26 @@ A good checkpoint answers:
 * What is still unclear?
 * What debt is known?
 * What should be kept if we rebuild?
+
+### Separate work completion from B acceptance
+
+A checkpoint should answer two different questions:
+
+1. Did the bounded work finish successfully?
+2. Is the Current B accepted for the scope we are actually deciding about?
+
+These are not the same question.
+
+A completed task, an empty work list, or one successful Agent Box is evidence. It is not automatic proof that the larger B is ready.
+
+`Accepted for this scope` means the declared scope has enough evidence, no material unresolved item remains inside that scope, and the current result is ready to stand until new material evidence appears.
+
+Short principle:
+
+```text
+Do not close B only because the current work list is empty.
+Do not invent more work after B is accepted for its declared scope.
+```
 
 ### Step 7 — Patch or rebuild
 
@@ -558,7 +623,9 @@ If rebuilding from here, remove:
 
 ## 12. Agent Box Template
 
-Use this when asking an AI agent to work inside a bounded scope.
+Use this when asking an AI agent to work inside explicit boundaries while allowing declared freedom inside those boundaries.
+
+The full Agent Box template separates what must stay fixed from what the agent may vary, compare, test, or improve, then records what evidence returns to the Current B.
 
 ### Goal
 
@@ -667,7 +734,7 @@ The way we write shapes the way the agent runs.
 
 ## 15. Current Status
 
-Version: v0.1.2
+Version: v0.2
 
 State: early public method seed
 

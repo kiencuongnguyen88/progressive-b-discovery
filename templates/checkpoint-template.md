@@ -77,6 +77,98 @@ Example:
 
 ---
 
+## B Status and Evidence
+
+A checkpoint should separate the current understanding of B from whether B is accepted for the scope being decided.
+
+### Acceptance scope
+
+What exact scope are we deciding about?
+
+    ...
+
+### Current B state
+
+Choose the closest state and explain it:
+
+- still developing;
+- accepted for this scope;
+- blocked by missing evidence;
+- unclear and needs another real-use test.
+
+Current state:
+
+    ...
+
+### Evidence received
+
+Include relevant human feedback, tests, and bounded-work results.
+
+- ...
+- ...
+- ...
+
+### Effect on Current B
+
+Choose the closest result:
+
+- B became clearer;
+- B changed materially;
+- B stayed the same but gained stronger evidence;
+- B remains unresolved;
+- the current scope is ready for acceptance.
+
+Explanation:
+
+    ...
+
+### What remains unresolved
+
+- ...
+- ...
+- ...
+
+A completed task, an empty work list, or one successful Agent Box does not automatically accept the larger Current B.
+
+### Proposed Next B
+
+If evidence suggests a different target, record it here without silently replacing the Current B.
+
+Proposed Next B:
+
+    ...
+
+Why it is being proposed:
+
+    ...
+
+Decision state:
+
+- proposal;
+- adopted as Current B;
+- rejected;
+- parked.
+
+Selected state:
+
+    ...
+
+Use `adopted as Current B` only after the decision or Human Gate for that target change is satisfied.
+
+Decision / evidence:
+
+    ...
+
+### Preserved working checkpoint
+
+When exploring a newer candidate, which checkpoint remains the best-known working state until the newer target is adopted?
+
+    ...
+
+Continue from checkpoint state, not from the latest artifact alone.
+
+---
+
 ## Current Version
 
 What does the current version do?
@@ -325,6 +417,8 @@ Choose one:
 - create a new agent box;
 - create a readback;
 - split into a separate method or file.
+- run another bounded probe;
+- review B acceptance for the current scope.
 
 Selected next move:
 
@@ -353,6 +447,8 @@ Instruction:
 ## Short Summary
 
 Write 3–5 lines that capture the checkpoint.
+
+State whether the Current B is still developing or accepted for the scope being decided.
 
 Example:
 

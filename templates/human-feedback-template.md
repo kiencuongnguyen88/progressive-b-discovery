@@ -222,7 +222,34 @@ Examples:
 
 ---
 
-## 10. Excessive
+## 10. Workflow / Manual Effort
+
+Human effort is part of real-use evidence.
+
+Record any workflow burden that makes the current version harder to operate, even when the technical result is correct.
+
+Examples:
+
+- repeated manual steps;
+- repeated copy / transfer steps;
+- repeated handoffs between tools or people;
+- waiting for Human input;
+- machine time spent waiting for Human coordination;
+- avoidable authentication or setup repetition.
+
+Workflow / manual effort:
+
+- ...
+- ...
+- ...
+
+Optional note:
+
+    ...
+
+---
+
+## 11. Excessive
 
 What should be removed, shortened, or simplified?
 
@@ -241,7 +268,7 @@ Examples:
 
 ---
 
-## 11. Confusing
+## 12. Confusing
 
 What was hard to understand?
 
@@ -259,7 +286,7 @@ Examples:
 
 ---
 
-## 12. Not Trusted Yet
+## 13. Not Trusted Yet
 
 What part do you not trust yet?
 
@@ -278,7 +305,7 @@ Examples:
 
 ---
 
-## 13. Feels Right
+## 14. Feels Right
 
 What feels right and should continue?
 
@@ -297,7 +324,7 @@ Examples:
 
 ---
 
-## 14. Fit Score
+## 15. Fit Score
 
 Give a rough score.
 
@@ -337,7 +364,7 @@ Optional note:
 
 ---
 
-## 15. Direction Change
+## 16. Direction Change
 
 Did this feedback change the target B?
 
@@ -361,7 +388,7 @@ Explanation:
 
 ---
 
-## 16. Patch Request
+## 17. Patch Request
 
 What small change should happen next?
 
@@ -380,7 +407,7 @@ Examples:
 
 ---
 
-## 17. Rebuild Signal
+## 18. Rebuild Signal
 
 Does the current version need a rebuild?
 
@@ -411,7 +438,7 @@ Rebuild may be useful when:
 
 ---
 
-## 18. Keep If Rebuild
+## 19. Keep If Rebuild
 
 If rebuilding, what should be kept?
 
@@ -421,7 +448,7 @@ If rebuilding, what should be kept?
 
 ---
 
-## 19. Remove If Rebuild
+## 20. Remove If Rebuild
 
 If rebuilding, what should be removed?
 
@@ -431,7 +458,7 @@ If rebuilding, what should be removed?
 
 ---
 
-## 20. Human Decision
+## 21. Human Decision
 
 Choose the next move.
 
@@ -456,7 +483,7 @@ Reason:
 
 ---
 
-## 21. Instruction for AI
+## 22. Instruction for AI
 
 Write a short instruction for the next AI or agent.
 
@@ -474,7 +501,7 @@ Instruction:
 
 ---
 
-## 22. Short Human Feedback
+## 23. Short Human Feedback
 
 Use this compact version for small tasks.
 
@@ -508,7 +535,7 @@ Use this compact version for small tasks.
 
 ---
 
-## 23. Example Feedback
+## 24. Example Feedback
 
 ### Feedback ID
 
