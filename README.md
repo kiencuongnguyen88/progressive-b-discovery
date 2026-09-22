@@ -29,6 +29,7 @@ If you are new, start with the quick-start guide, then use the templates and pro
 | [`examples/first-loop-readback-example.md`](examples/first-loop-readback-example.md) | A completed readback example showing what one loop can leave behind |
 | [`examples/bounded-work-current-b-example.md`](examples/bounded-work-current-b-example.md) | Shows how successful bounded work returns evidence to a larger Current B without automatically closing it |
 | [`examples/progressive-b-repo-v02-case-study.md`](examples/progressive-b-repo-v02-case-study.md) | A self-hosting case from this repo's public history: provisional direction, revert, narrower update, and coherence repair |
+| [`examples/continue-from-checkpoint-example.md`](examples/continue-from-checkpoint-example.md) | Shows how a new chat or agent can preserve accepted state, fresh-read mutable facts, and continue the exact next move |
 | [`prompts/progressive-b-discovery-prompt.md`](prompts/progressive-b-discovery-prompt.md) | Prompt pack for running the method with AI |
 | [`templates/checkpoint-template.md`](templates/checkpoint-template.md) | Template for preserving the current understanding |
 | [`templates/construction-trail-template.md`](templates/construction-trail-template.md) | Template for preserving lineage and build history |
@@ -48,6 +49,7 @@ For a first-time reader:
 7. Use [`examples/first-loop-readback-example.md`](examples/first-loop-readback-example.md) to see what one completed loop leaves behind.
 8. Use [`examples/bounded-work-current-b-example.md`](examples/bounded-work-current-b-example.md) to see how bounded work can pass while the larger Current B is still developing.
 9. Use [`examples/progressive-b-repo-v02-case-study.md`](examples/progressive-b-repo-v02-case-study.md) to see one self-hosting history from provisional direction to narrower `v0.2` public changes.
+10. Use [`examples/continue-from-checkpoint-example.md`](examples/continue-from-checkpoint-example.md) to see how another chat or agent can continue without restarting accepted work.
 
 ### Minimal use path
 
@@ -105,7 +107,8 @@ Current structure:
 - simple example;
 - first-loop readback example;
 - bounded-work / Current-B example;
-- self-hosting repository case study.
+- self-hosting repository case study;
+- continue-from-checkpoint example.
 
 Next development direction:
 
